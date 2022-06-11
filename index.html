@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <title>Perritos</title>
+</head>
+
+<body>
+    <header>
+            <span class="fa-solid fa-paw"></span>
+            <h1>Doggies</h1>
+            <span class="fa-solid fa-paw"></span>
+    </header>
+    <span id="error"></span>
+    <section id="random">
+        <div class="title">
+            <span class="fa-solid fa-shuffle" onclick="loadRandomDogsFetch();"></span>
+            <h2>Random doggies</h2>
+            <span class="fa-solid fa-shuffle" onclick="loadRandomDogsAwait()"></span>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-img">
+                    <span class="fa-solid fa-heart love"></span>
+                    <img src="" alt="">
+                </div>
+                <div class="card-text">
+                    <p class="name"></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <span class="fa-solid fa-heart love"></span>
+                    <img src="" alt="">
+                </div>
+                <div class="card-text">
+                    <p class="name"></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <span class="fa-solid fa-heart love"></span>
+                    <img src="" alt="">
+                </div>
+                <div class="card-text">
+                    <p class="name"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="favorites">
+        <div class="title">
+            <span class="fa-solid fa-heart love"></span>
+            <h2>Favorites doggies</h2>
+            <span class="fa-solid fa-heart love"></span>
+        </div>
+        <div class="cards">
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+</html>
