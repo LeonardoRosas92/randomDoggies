@@ -71,6 +71,7 @@ async function saveFavoriteDogs(id) {
             spanError.innerHTML = "Hubo un error: " + response.status + data.message
         }else{
             loadfavoritesDogs();
+            showModal(true);
         }
     } catch (error) {
         console.log("Error " , error);
@@ -87,6 +88,7 @@ async function deleteFavoriteDog(id) {
             spanError.innerHTML = "Hubo un error: " + response.status + data.message
         }else{
             loadfavoritesDogs();
+            showModal(false);
         }
     } catch (error) {
         console.log("Error" , error);
@@ -144,6 +146,33 @@ function addMessage(id) {
     h1.innerHTML = "Don't have favorites dogs yet :(";
     h1.className = "message";
     section.appendChild(h1);
+}
+
+function showModal(addFavorite){
+    const textSuccess = "Successfully added to favorites";
+    const textUnsuccess = "Successfully eliminated";
+    const iconHeard = "success fa-solid fa-heart";
+    const iconHeardBroke = "wrong fa-solid fa-heart-crack";
+    const modal = document.querySelector(".modal");
+    const btnClose = document.querySelector(".modal .close");
+    btnClose.onclick = function() {
+        modal.style.display = "none";
+    }
+    const modalMessage = document.querySelector(".modal .modal-content .modal-message");
+    const icon = document.querySelector(".modal .modal-content :nth-child(3)");
+    if(addFavorite){
+        modalMessage.innerHTML = textSuccess;
+        icon.className = iconHeard;
+    }else{
+        modalMessage.innerHTML = textUnsuccess;
+        icon.className = iconHeardBroke;
+    }
+    modal.style.display = "block";
+}
+
+function closeModal(){
+    const modal = document.querySelector(".modal");
+    modal.style.display = "none";
 }
 
 loadRandomDogsFetch();
